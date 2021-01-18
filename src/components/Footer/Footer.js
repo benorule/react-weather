@@ -6,7 +6,7 @@ function Footer() {
     <div className='footer-container'>
       <div className='footer-logo'>
         <a href='https://github.com/react-weather' className='social-logo'>
-          Source Code
+          View Source Code
         </a>
       </div>
     </div>
