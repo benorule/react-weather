@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../../App.css';
 import './HeroSection.css';
+import Conditions from '../Conditions/Conditions';
 
 const Forecast = () => {
   let [responseObj, setResponseObj] = useState({});
@@ -26,8 +27,8 @@ const Forecast = () => {
       <input className="field"
         type="text"
         placeholder="Enter a city"></input>
-      {JSON.stringify(responseObj)}
       <button className="field button" onClick={getForecast}>Get Forecast</button>
+      <Conditions responseObj={responseObj}/>
     </div>
   )
 }
