@@ -24,11 +24,11 @@ const Forecast = () => {
     <div className='hero-container'>
       <video src='/videos/video-2.mp4' autoPlay loop muted />
       <h1 className="header">Weather Dashboard</h1>
+      <Conditions responseObj={responseObj}/>
       <input className="field"
         type="text"
         placeholder="Enter a city"></input>
       <button className="field button" onClick={getForecast}>Get Forecast</button>
-      <Conditions responseObj={responseObj}/>
     </div>
   )
 }
