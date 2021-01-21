@@ -48,7 +48,7 @@ const Forecast = () => {
 
   return (
     <div className='hero-container'>
-      <video src='/videos/video-2.mp4' autoPlay loop muted />
+      <video src='../../public/videos/video-2.mp4' autoPlay loop muted />
       <h1 className="header">Weather Dashboard</h1>
       <Conditions responseObj={responseObj} error={error} loading={loading} />
       <form onSubmit={getForecast}>
