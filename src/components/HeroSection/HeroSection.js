@@ -5,22 +5,22 @@ import Conditions from '../Conditions/Conditions';
 
 const Forecast = () => {
   let [responseObj, setResponseObj] = useState({});
-  let [city, setCity] = useState('');
-  let [unit, setUnit] = useState('imperial');
-  const uriEncodedCity = encodeURIComponent(city);
+  let [city, setCity] = useState(''); 
+  let [unit, setUnit] = useState('imperial'); // set farenheit as default
+  const uriEncodedCity = encodeURIComponent(city); 
   let [error, setError] = useState(false);
   let [loading, setLoading] = useState(false);
 
   function getForecast(e) {
     e.preventDefault();
     if (city.length === 0) {
-      return setError(true);
+      return setError(true); // error if no city is inputted 
     }
     // Clear state in preparation for new data
     setError(false);
     setResponseObj({});
 
-    setLoading(true);
+    setLoading(true); //
 
     const uriEncodedCity = encodeURIComponent(city);
 
@@ -34,7 +34,7 @@ const Forecast = () => {
       .then(response => response.json())
       .then(response => {
         if (response.cod !== 200) {
-          throw new Error()
+          throw new Error() // error if input is not a valid city
         }
         setResponseObj(response);
         setLoading(false);
@@ -58,7 +58,7 @@ const Forecast = () => {
           placeholder="Enter City"
           maxLength="50"
           value={city}
-          onChange={(e) => setCity(e.target.value)}
+          onChange={(e) => setCity(e.target.value)}  
         />
         <div>
           <label className="label button">
@@ -70,7 +70,7 @@ const Forecast = () => {
               value="imperial"
               onChange={(e) => setUnit(e.target.value)}
             />
-          &#8457;
+          &#8457; 
         </label>
           <label className="label button">
             <input
